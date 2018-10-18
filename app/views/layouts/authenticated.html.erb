@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+    <title>Twin Cities Maker</title>
+  </head>
+  <body>
+    <%= render 'layouts/partials/dashboard/topnav' %>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <%= render 'layouts/partials/dashboard/nav_links' %>
+          <%= render 'layouts/partials/dashboard/nav_links' %>
+          <%= render 'layouts/partials/dashboard/nav_links' %>
+        </nav>
+        <div class="col-md-10">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
