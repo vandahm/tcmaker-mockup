@@ -9,6 +9,10 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
 
+# SVG Hacks
+Rails.application.config.assets.precompile += %w( '.svg' )
+Rails.application.config.assets.css_compressor = :sass
+
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.

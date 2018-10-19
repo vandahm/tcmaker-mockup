@@ -5,6 +5,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <!-- Favicon, etc -->
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -13,11 +32,55 @@
     <title>Twin Cities Maker</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container nav-container">
       <%= render 'layouts/partials/top_nav' %>
     </div>
-    <div class="container">
+    <div class="container main-container">
       <%= yield %>
     </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3">
+            <p><%= image_tag('logo-white-text.svg') -%></p>
+            <p>
+              3119 E. 26th Street<br>
+              Minneapolis, MN 55406
+            </p>
+          </div>
+
+          <div class="col-lg-3">
+            <%= link_to 'https://www.openstreetmap.org/?mlat=44.95527&mlon=-93.22635#map=19/44.95527/-93.22635' do %>
+              <%= image_tag('map-to-hack-factory.png', class: 'img-fluid') -%>
+            <% end %>
+          </div>
+
+          <div class="col-lg-3">
+            <h4>Follow Us</h4>
+            <ul class="list-unstyled">
+              <li><a href="https://tcmaker.eventbrite.com/">EventBrite</a></li>
+              <li><a href="https://www.facebook.com/groups/85060647690/">Facebook</a></li>
+              <li><a href="https://github.com/tcmaker">GitHub</a></li>
+              <li><a href="https://groups.google.com/forum/#!forum/tcmaker">Google Groups</a></li>
+              <li><a href="https://twitter.com/tcmaker">Twitter</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3">
+            <h4>Fine Print</h4>
+            <p>Copyright &copy; 2009&ndash;2018 Twin Cities Maker. <a
+              href="https://creativecommons.org/licenses/by-nc-sa/3.0/us/">Some
+              rights reserved.</a></p>
+            <ul class="list-unstyled">
+              <li><a href="">Policies and Rules</a></li>
+              <li><a href="">501(c)(3) Tax Information</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      </div>
+    </footer>
   </body>
 </html>
