@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'dashboard', media: 'all'
+    = javascript_include_tag 'application'
+    %title Twin Cities Maker
+  %body
+    = render 'layouts/partials/dashboard/topnav'
+    .container-fluid
+      .row
+        %nav.col-md-2.d-none.d-md-block.bg-light.sidebar
+          .sidebar-sticky
+            = render 'layouts/partials/dashboard/nav_links'
+            = render 'layouts/partials/dashboard/nav_links'
+            = render 'layouts/partials/dashboard/nav_links'
+        .col-md-9.ml-sm-auto.col-lg-10.px-4
+          = yield

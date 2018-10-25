@@ -1,0 +1,26 @@
+%h2 Members
+
+%table.table
+  %thead
+    %tr
+      %th{ scope: 'col' } #
+      %th{ scope: 'col' } Surname
+      %th{ scope: 'col' } Given Name
+      %th{ scope: 'col' } CiviCRM Number
+      %th{ scope: 'col' } Email
+      %th{ scope: 'col' } LDAP
+      %th{ scope: 'col' } Created At
+      %th{ scope: 'col' } Updated At
+  %tbody
+    - @members.each do |member|
+      %tr
+        %th{ scope: 'row' }= link_to member.id, dashboard_member_path(member)
+        %td= member.surname
+        %td= member.given_name
+        %td= member.civicrm_identifier
+        %td
+          %code= member.email
+        %td
+          %code= member.lab_username
+        %td= member.created_at
+        %td= member.updated_at

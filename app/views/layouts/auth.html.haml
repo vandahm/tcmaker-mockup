@@ -1,0 +1,24 @@
+!!! 5
+%html
+  %head
+    %meta{ charset: 'utf-8' }
+    %meta{ 'http-equiv' => 'X-UA-Compatible', content: 'IE=edge,chrome=1' }
+    %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag    'auth', media: 'all'
+    = javascript_include_tag 'application'
+  %body
+    .container.auth-container
+      .row
+        .col-lg-6.offset-lg-3
+          .card
+            .card-header
+              = yield :page_title
+            .card-body
+              - # TODO: Flash messages
+              - flash.each do |type, message|
+                %p= message
+              = yield
+          %header
+            = image_tag('logo-red-text.svg', class: "d-inline-block align-top", alt: "Twin Cities Maker")

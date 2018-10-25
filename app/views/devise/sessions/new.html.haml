@@ -1,0 +1,25 @@
+- content_for :page_title do
+  Sign In
+
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  - if resource.errors.any?
+    .alert.alert-danger
+      %h4 Error!
+      %p
+        = pluralize(@post.errors.count, 'error')
+        prevented this from happening.
+      %ul
+        - resource.errors.full_messages.each do |e|
+          %li
+            = e
+
+  .form-group
+    = f.label :email, 'Email Address'
+    = f.text_field :email, class: 'form-control'
+  .form-group
+    = f.label :password
+    = f.password_field :password, class: 'form-control'
+  .form-group
+    = f.submit 'Submit', class: 'btn btn-primary'
+
+= render 'devise/shared/links'

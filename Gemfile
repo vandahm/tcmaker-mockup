@@ -7,20 +7,35 @@ gem 'rails', '~> 5.2.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
+gem 'haml'
+gem 'haml-rails', '~> 1.0'
 gem 'sass-rails', '~> 5.0'
 gem 'jquery-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.1.3'
 
+# Backend
+gem 'devise'
+
+# Demo data
+gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
 # Business Logic
 gem "simple_calendar", "~> 2.0"
+
+# Don't trust user-generated HTML
+gem 'sanitize'
+
+
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   gem 'pry-rails'
+  # gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
 
 group :development do
