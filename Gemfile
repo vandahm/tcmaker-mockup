@@ -25,10 +25,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 gem "simple_calendar", "~> 2.0"
 
 # Don't trust user-generated HTML
-gem 'sanitize'
-
-
-
+gem "sanitize", ">= 4.6.3"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
