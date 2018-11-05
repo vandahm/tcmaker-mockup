@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <%= render "layouts/partials/head" %>
+  <body>
+    <div class="container nav-container">
+      <%= render 'layouts/partials/top_nav' %>
+    </div>
+    <section class="main-content inner">
+      <div class="container content-container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Blog Post</li>
+          </ol>
+        </nav>
+        <section class="page-heading">
+          <h2><%= yield :page_title %></h2>
+          <% if content_for(:page_subtitle) %>
+            <%= yield :page_subtitle %>
+          <% end %>
+        </section>
+        <div class="row">
+          <div class="col-md-7">
+            <%= yield %>
+          </div>
+          <div class="col-md-4 offset-md-1">
+            <%= yield :sidebar_content %>
+          </div>
+        </div>
+      </div>
+    </section>
+    <%= render "layouts/partials/footer" %>
+  </body>
+</html>

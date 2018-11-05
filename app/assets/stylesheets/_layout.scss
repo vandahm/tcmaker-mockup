@@ -23,8 +23,17 @@ h1,h2,h3,h4,h5,h6 {
 
 .blog-preview {
   h1,h2,h3,h4,h5,h6 {
-    color: $body-color;
     margin-bottom: 0;
+    a {
+      color: $body-color;
+      &:hover {
+        color: $brand-red;
+      }
+    }
+  }
+
+  .blog-preview-image {
+    max-width: 200px;
   }
 
   .byline {
@@ -32,6 +41,18 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 0.9rem;
     font-style: italic;
   }
+}
+
+.blog-post {
+  .byline {
+    font-family: $font-family-sans-serif;
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+}
+
+.page-heading {
+  margin-bottom: 1rem;
 }
 
 // Flexbox Sticky Footer

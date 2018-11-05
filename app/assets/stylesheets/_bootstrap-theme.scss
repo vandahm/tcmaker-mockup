@@ -23,4 +23,11 @@ $h6-font-size:                $font-size-base !default;
 $navbar-padding-x: 0;
 // $navbar-padding-y: 0;
 
-// Logo Red: #990000;
+$breadcrumb-padding-y: 0.25rem;
+$breadcrumb-padding-x: 0.25rem;
+// $breadcrumb-bg: transparent;
+
+.breadcrumb {
+  font-family: $headings-font-family;
+  font-size: 0.8rem;
+}

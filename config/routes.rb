@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :members
   root to: 'index#index'
-  get 'blog',        to: 'index#blog_archive'
-  get 'blog/post', to: 'index#blog_detail'
+  get 'blog',        to: 'interior#blog_archive'
+  get 'blog/post', to: 'interior#blog_detail'
   get 'legalese',    to: 'index#legalese'
 
   resources :events

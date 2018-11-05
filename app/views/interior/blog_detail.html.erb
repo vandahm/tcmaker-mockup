@@ -1,0 +1,18 @@
+<% content_for :sidebar_content do %>
+  <h3>Other Posts</h3>
+  <%- @sidebar_posts.each do |p| %>
+    <%= p.title %>
+  <% end %>
+<% end %>
+
+<% content_for :page_title do %>
+  <%= @post.title %>
+<% end %>
+
+<% content_for :page_subtitle do %>
+  by Samuel L. Jackson, October 4th, 2018
+<% end %>
+
+<article class="blog-post">
+  <%= @post.body.html_safe %>
+</article>
