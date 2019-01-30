@@ -5,31 +5,37 @@
     <div class="container nav-container">
       <%= render 'layouts/partials/top_nav' %>
     </div>
-    <section class="main-content inner">
-      <div class="container content-container">
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/">Home</a></li>
-            <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Blog Post</li>
-          </ol>
-        </nav>
-        <section class="page-heading">
-          <h2><%= yield :page_title %></h2>
-          <% if content_for(:page_subtitle) %>
-            <%= yield :page_subtitle %>
-          <% end %>
-        </section>
-        <div class="row">
-          <div class="col-md-7">
-            <%= yield %>
-          </div>
-          <div class="col-md-4 offset-md-1">
-            <%= yield :sidebar_content %>
-          </div>
+    <div class="container main-container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Blog Post</li>
+        </ol>
+      </nav>
+      <section class="page-heading">
+        <h2><%= yield :page_title %></h2>
+        <% if content_for(:page_subtitle) %>
+          <%= yield :page_subtitle %>
+        <% end %>
+      </section>
+      <div class="row">
+        <div class="col-md-8">
+          <%= yield %>
+        </div>
+        <div class="col-md-3 offset-md-1">
+          <form>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="search terms" aria-label="Search the blog" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+              </div>
+            </div>
+          </form><br>
+          <%= yield :sidebar_content %>
         </div>
       </div>
-    </section>
+    </div>
     <%= render "layouts/partials/footer" %>
   </body>
 </html>

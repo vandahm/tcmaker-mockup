@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <%= render "layouts/partials/head" %>
+  <body>
+    <div class="container nav-container">
+      <%= render 'layouts/partials/top_nav' %>
+    </div>
+    <div class="container main-container">
+
+      <%= render "layouts/partials/breadcrumbs" %>
+
+      <!-- <%= yield :hero_image %> -->
+
+      <h1 class="brochure-heading" style="background-image: url(<%= yield :hero_image %>)"><%= yield :page_title %></h1>
+
+      <div class="row">
+        <div class="col-md-4 left-nav">
+          <ul class="nav flex-column">
+            <% @leftnav_items.each do |i| %>
+              <li class="nav-item">
+                <%= link_to i.name, i.path, class: i.active ? 'nav-link active' : 'nav-link' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-md-8">
+          <!-- <section class="page-heading">
+            <h2><%= yield :page_title %></h2>
+            <% if content_for(:page_subtitle) %>
+              <%= yield :page_subtitle %>
+            <% end %>
+          </section> -->
+          <%= yield %>
+        </div>
+      </div>
+    </div> <!-- main-container -->
+    <%= render "layouts/partials/footer" %>
+  </body>
+</html>

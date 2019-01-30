@@ -1,0 +1,11 @@
+<% unless @breadcrumbs.empty? %>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <% *inactive_breadcrumbs, active_breadcrumb = @breadcrumbs %>
+      <% inactive_breadcrumbs.each do |b| %>
+        <li class="breadcrumb-item"><%= link_to b.title, b.path %></li>
+      <% end %>
+      <li class="breadcrumb-item active" aria-current="page"><%= active_breadcrumb.title %></li>
+    </ol>
+  </nav>
+<% end %>
