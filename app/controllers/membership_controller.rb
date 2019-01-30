@@ -2,18 +2,27 @@ class MembershipController < ApplicationController
   layout 'brochure'
   before_action :initialize_breadcrumbs
 
-  def index; end
+  def index
+    active_leftnav_item :main
+  end
 
-  def join; end
+  def join
+    active_leftnav_item :join
+    push_breadcrumb 'How to Join', '/membership/join'
+  end
 
-  def rules; end
+  def rules
+    active_leftnav_item :rules
+    push_breadcrumb 'Rules and Policies', '/membership/rules'
+  end
 
   protected
 
   def initialize_breadcrumbs
     push_breadcrumb('Membership', '/membership')
+
     add_leftnav_item(:main, 'Benefits', '/membership')
-    add_leftnav_item(:history, 'How to Join', '/membership/join')
-    add_leftnav_item(:contact, 'Rules and Policies', '/membership/rules')
+    add_leftnav_item(:join, 'How to Join', '/membership/join')
+    add_leftnav_item(:rules, 'Rules and Policies', '/membership/rules')
   end
 end
