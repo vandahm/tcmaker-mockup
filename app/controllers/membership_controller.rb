@@ -11,6 +11,11 @@ class MembershipController < ApplicationController
     push_breadcrumb 'How to Join', '/membership/join'
   end
 
+  def get_involved
+    active_leftnav_item :get_involved
+    push_breadcrumb 'Getting Involved', '/membership/get-involved'
+  end
+
   def rules
     active_leftnav_item :rules
     push_breadcrumb 'Rules and Policies', '/membership/rules'
@@ -23,6 +28,7 @@ class MembershipController < ApplicationController
 
     add_leftnav_item(:main, 'Benefits', '/membership')
     add_leftnav_item(:join, 'How to Join', '/membership/join')
+    add_leftnav_item(:get_involved, 'Getting Involved', '/membership/get-involved')
     add_leftnav_item(:rules, 'Rules and Policies', '/membership/rules')
   end
 end
