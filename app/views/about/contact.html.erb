@@ -6,6 +6,35 @@
   <%= image_path('chisels-in-row.jpg') %>
 <% end %>
 
-<h2>Location and Contact Information</h2>
+<div class="alert alert-dark" role="alert">
+  <h4 class="alert-heading">Developer Note</h4>
+  We should probably have a contact form, so that people can reach out to us
+  more easily. I'm not going to mock that up here, but if we had one we'd probably
+  split this page into two: one for the form and one for the map and open house information.
+</div>
 
-<p>Twin Cities Maker</p>
+<h2>Get In Touch</h2>
+
+<p>Our workshop is located in the Seward neighborhood of Minneapolis, and we're
+active on a number of online platforms.</p>
+
+<h3>Our Location</h3>
+
+<p>
+  We host an open house every Wednesday evening from 7:00 PM to 9:00 PM. During
+  that time, you're welcome to stop by, get a tour of the shop, and chat with
+  some of our board members.
+</p>
+
+<div class="row">
+  <div class="col-md-8">
+    <%= link_to 'https://www.openstreetmap.org/?mlat=44.95527&mlon=-93.22635#map=19/44.95527/-93.22635' do %>
+      <%= image_tag('map-to-hack-factory-16x9.png', class: 'img-fluid') -%>
+    <% end %>
+  </div>
+  <div class="col-md-4">
+    <p><strong>Twin Cities Maker</strong><br>
+    3119 E. 26th Street<br>
+    Minneapolis, MN 55406</p>
+  </div>
+</div>
